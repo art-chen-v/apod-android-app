@@ -10,7 +10,6 @@ import com.artemchen.android.apod.api.PhotoRepository
 import com.artemchen.android.apod.database.ApodPhotoItemDb
 import com.artemchen.android.apod.database.ApodRemoteKeys
 import com.artemchen.android.apod.database.ApodRoomDb
-import kotlinx.coroutines.delay
 import retrofit2.HttpException
 import java.io.IOException
 
@@ -38,7 +37,6 @@ class ApodGalleryRemoteMediator(
         state: PagingState<Int, ApodPhotoItemDb>
     ): MediatorResult {
         return try {
-//            Log.d(TAG, "Inside Remote mediator, Before loadType $loadType")
             val loadKey = when (loadType) {
                 LoadType.REFRESH -> null
                 LoadType.PREPEND ->

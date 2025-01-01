@@ -16,18 +16,6 @@ class ApodDbRepository private constructor(context: Context) {
         .fallbackToDestructiveMigration()
         .build()
 
-    suspend fun insertApodDbItems(apodDbItems: List<ApodPhotoItemDb>) {
-        database.apodDao().insertAll(apodDbItems)
-    }
-
-//    fun getApodPagingSource() {
-//        database.apodDao().pagingSource()
-//    }
-
-    suspend fun deleteAll() {
-        database.apodDao().clearAll()
-    }
-
     companion object {
         private var INSTANCE: ApodDbRepository? = null
 
