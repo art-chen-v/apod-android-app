@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipeRefresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/indeterminateBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="invisible" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/photo_grid"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:itemCount="16"
+            tools:listitem="@layout/grid_item_gallery">
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <include
+            android:id="@+id/loading_error_try_again"
+            layout="@layout/loading_error_try_again" />
+    </FrameLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
