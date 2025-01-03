@@ -11,7 +11,7 @@ object PhotoInterceptor : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
         val originalRequest: Request = chain.request()
         val newUrl = originalRequest.url.newBuilder()
-            .addQueryParameter("api_key", API_KEY)
+            .addQueryParameter("api_key", "DEMO_KEY")
             .build()
         val modifiedRequest: Request = originalRequest.newBuilder()
             .url(newUrl)
